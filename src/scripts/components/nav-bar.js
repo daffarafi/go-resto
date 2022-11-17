@@ -16,11 +16,11 @@ class NavBar extends HTMLElement {
                     <li>Favorite</li>
                     <li>About Us</li>
                 </ul> -->
-                <div class="hamburger">
+                <button class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
             <div class="logo">
                 <div><span>Go</span>Resto</div>

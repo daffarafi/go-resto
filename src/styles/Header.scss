@@ -2,19 +2,34 @@
 
 header-content {
 	display: flex;
+	position: relative;
 	width: 100%;
 	height: 100vh;
 	max-height: 764px;
 	justify-content: center;
 	align-items: center;
-	background: url('../public/images/heros/hero-image_4.jpg');
-	background: grey;
 	background-position: center;
 	background-size: cover;
-	h1 {
-		color: white;
-		span {
-			color: $primaryColor;
+	.opacity {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+	.head-content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h1 {
+			font-size: 4rem;
+			color: white;
+			span {
+				color: $primaryColor;
+			}
 		}
 	}
 }

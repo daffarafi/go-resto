@@ -1,0 +1,35 @@
+@import 'base';
+
+@mixin button($mainColor: $primaryColor, $fontColor: black, $reverse: false) {
+	display: block;
+	// transition: all 0.3s;
+	height: 44px;
+	padding: 0 15px;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px solid $mainColor;
+	@if $reverse {
+		background-color: transparent;
+		color: $mainColor;
+		// &:hover {
+		// 	background-color: $mainColor;
+		// 	color: $fontColor;
+		// }
+	} @else {
+		background-color: $mainColor;
+		color: $fontColor;
+		// &:hover {
+		// 	background-color: $fontColor;
+		// 	color: $mainColor;
+		// }
+	}
+}
+
+.primary-button {
+	@include button($primaryColor, white);
+}
+
+.second-button {
+	@include button($primaryColor, $primaryColor, true);
+}
