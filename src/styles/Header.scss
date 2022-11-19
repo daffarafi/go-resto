@@ -10,6 +10,7 @@ header-content {
 	align-items: center;
 	background-position: center;
 	background-size: cover;
+	margin-bottom: 4rem;
 	.opacity {
 		position: absolute;
 		width: 100%;
@@ -25,7 +26,6 @@ header-content {
 		flex-direction: column;
 		align-items: center;
 		h1 {
-			font-size: 4rem;
 			color: white;
 			span {
 				color: $primaryColor;

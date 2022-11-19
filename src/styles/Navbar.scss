@@ -10,7 +10,8 @@ nav-bar {
 	grid-template-columns: repeat(3, 1fr);
 	align-items: center;
 	justify-items: stretch;
-	padding: 0.8rem 1rem;
+	padding-top: 0.8rem;
+	padding-bottom: 0.8rem;
 
 	.navigates {
 		width: fit-content;

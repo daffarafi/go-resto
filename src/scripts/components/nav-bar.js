@@ -33,6 +33,7 @@ class NavBar extends HTMLElement {
                 </label>
             </div>
         `;
+		this.classList.add('container');
 	}
 }
 

@@ -14,14 +14,19 @@ class RestaurantItem extends HTMLElement {
             <img src="${this._restaurant.pictureId}" alt="">
         </div>
         <div class="restaurant-detail">
-            <h4>${this._restaurant.city}</h4>
+            <h4><span>★</span>${this._restaurant.rating}</h4>
             <h3>${this._restaurant.name}</h3>
             <p>
-                ${this._restaurant.description}
+                ${
+					this._restaurant.description.length <= 150
+						? this._restaurant.description
+						: this._restaurant.description.slice(1, 150) +
+						  '... <span>Read more</span>'
+				}
             </p>
         </div>
-        <div class="restaurant-rating">
-            <p>★<span>${this._restaurant.rating}</span></p>
+        <div class="restaurant-city">
+            <p>${this._restaurant.city}</p>
         </div>
         `;
 	}
