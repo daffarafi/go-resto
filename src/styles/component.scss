@@ -34,6 +34,20 @@ h2 {
 	line-height: 3rem;
 }
 
+.skip-to-content {
+	position: absolute;
+	background-color: $primaryColor;
+	color: white;
+	left: 10px;
+	top: -100px;
+	z-index: 10;
+	padding: 1rem;
+	transition: all 0.3s;
+}
+.skip-to-content:focus {
+	top: 0;
+}
+
 .container {
 	padding-left: 1rem;
 	padding-right: 1rem;
