@@ -28,15 +28,12 @@ class NavBar extends HTMLElement {
                 <div><span>Go</span>Resto</div>
             </div>
             <div class="lang-container">
-                <div  id="lang">
-                    <label for="id">
-                        ID
-                        <input type="radio" name="switchLang" id="id" hidden>
-                    </label>
-                    <label for="en" >
-                        EN
-                        <input type="radio" name="switchLang" id="en" hidden>
-                    </label>
+                <div id="lang">
+                    <label for="switchLang">
+                        <span>ID</span>
+                        <span>EN</span>
+7                    </label>
+                    <input type="checkbox" name="switchLang" id="switchLang" checked>
                 </div>
             </div>
         `;

@@ -10,7 +10,6 @@ class OurServices extends HTMLElement {
 	}
 
 	render() {
-		console.log('callback');
 		this.style.backgroundImage = `url(${img})`;
 		this.style.backgroundPosition = 'center';
 		this.style.backgroundRepeat = 'no-repeat';

@@ -7,7 +7,7 @@ const main = () => {
 	const logoNav = navBar.querySelector('.logo');
 	const searchBtn = document.querySelector('#searchButtonElement');
 	const switchLangContainer = document.querySelector('#lang');
-	const switchLangBtn = switchLangContainer.getElementsByTagName('input');
+	const switchLangBtn = switchLangContainer.querySelector('#switchLang');
 	const toggleNavlinks = document.querySelector('.hamburger');
 	const cover = document.querySelector('.cover');
 	const cross = toggleNavlinks.getElementsByTagName('span');
@@ -86,11 +86,13 @@ const main = () => {
 
 	giveBtnClassOnPc();
 
-	for (const el of switchLangBtn) {
-		el.addEventListener('change', () => {
-			switchLangContainer.classList.toggle('switch-lang');
-		});
-	}
+	switchLangBtn.addEventListener('click', () => {
+		if (switchLangBtn.checked) {
+			switchLangContainer.classList.add('switch-lang');
+		} else {
+			switchLangContainer.classList.remove('switch-lang');
+		}
+	});
 
 	toggleNavlinks.addEventListener('click', toggleMenu);
 	cover.addEventListener('click', toggleMenu);
