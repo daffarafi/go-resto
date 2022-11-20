@@ -12,6 +12,11 @@ a {
 	color: black;
 }
 
+ul,
+ol {
+	list-style: none;
+}
+
 p {
 	font-size: 0.9rem;
 	line-height: 1.5rem;
@@ -51,7 +56,36 @@ h2 {
 	}
 }
 
-.selected-lang {
-	color: $primaryColor !important;
-	font-weight: 400 !important;
+.switch-lang {
+	transform: translateX(-50%);
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	p {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	h1 {
+		font-size: 6rem;
+	}
+	h2 {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+	.margin-section {
+		margin-bottom: 6rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	h2 {
+		font-size: 3.5rem;
+	}
+	.margin-section {
+		margin-bottom: 7rem;
+	}
 }

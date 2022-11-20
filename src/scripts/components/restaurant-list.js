@@ -10,6 +10,12 @@ class RestaurantList extends HTMLElement {
 		this.render();
 	}
 
+	renderNotFound(string) {
+		this.innerHTML = `
+            <p class="not-found">${string}</p>
+        `;
+	}
+
 	render() {
 		this.innerHTML = `
 

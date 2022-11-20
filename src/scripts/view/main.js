@@ -1,25 +1,70 @@
 import DataFetcher from '../data/data-fetcher.js';
 
 const main = () => {
-	const restaurantList = document.querySelector('restaurant-list');
-	const navBar = document.querySelector('nav-bar');
+	const exploreRestaurant = document.querySelector('.explore-restaurant');
+	const popularRestaurant = document.querySelector('.popular-restaurant');
+	const navBar = document.querySelector('nav');
 	const logoNav = navBar.querySelector('.logo');
-	const switchLang = document.getElementsByName('switchLang');
-	const switchLangLabel = document.querySelectorAll('.lang label');
+	const searchBtn = document.querySelector('#searchButtonElement');
+	const switchLangContainer = document.querySelector('#lang');
+	const switchLangBtn = switchLangContainer.getElementsByTagName('input');
+	const toggleNavlinks = document.querySelector('.hamburger');
+	const cover = document.querySelector('.cover');
+	const cross = toggleNavlinks.getElementsByTagName('span');
+	const menu = document.querySelector('.navlinks');
+	const navLinkBtn = menu.querySelectorAll('button-element a');
 
-	const fetchRestaurants = async () => {
+	const fetchRestaurants = async (
+		keyword = '',
+		container = exploreRestaurant
+	) => {
 		try {
-			renderResult(await DataFetcher.fetchRestaurants());
+			renderResult(
+				await DataFetcher.fetchRestaurants(keyword),
+				container
+			);
 		} catch (err) {
-			alert(err);
+			renderNotFound(err, container);
 		}
 	};
 
-	const renderResult = (restaurants) => {
-		restaurantList.restaurants = restaurants;
+	const renderResult = (restaurants, container) => {
+		container.restaurants = restaurants;
 	};
 
+	const renderNotFound = (string, container) => {
+		container.renderNotFound(string);
+	};
+
+	const toggleMenu = () => {
+		for (const el of cross) {
+			el.classList.toggle('active');
+		}
+		menu.classList.toggle('active');
+		cover.classList.toggle('active');
+		document.body.classList.toggle('overflow-hidden');
+	};
+
+	const giveBtnClassOnPc = () => {
+		if (window.innerWidth >= 1024) {
+			for (const el of navLinkBtn) {
+				el.classList.add('nav-btn-on-pc');
+			}
+		} else {
+			for (const el of navLinkBtn) {
+				el.classList.remove('nav-btn-on-pc');
+			}
+		}
+	};
+
+	console.log(popularRestaurant);
 	fetchRestaurants();
+	fetchRestaurants('malang', popularRestaurant);
+
+	searchBtn.addEventListener('click', () => {
+		const searchValue = document.querySelector('#searchElement').value;
+		fetchRestaurants(searchValue, exploreRestaurant);
+	});
 
 	window.addEventListener('scroll', () => {
 		if (
@@ -36,12 +81,20 @@ const main = () => {
 		}
 	});
 
-	for (const el of switchLang) {
+	window.addEventListener('resize', () => {
+		giveBtnClassOnPc();
+	});
+
+	giveBtnClassOnPc();
+
+	for (const el of switchLangBtn) {
 		el.addEventListener('change', () => {
-			switchLangLabel[0].classList.toggle('selected-lang');
-			switchLangLabel[1].classList.toggle('selected-lang');
+			switchLangContainer.classList.toggle('switch-lang');
 		});
 	}
+
+	toggleNavlinks.addEventListener('click', toggleMenu);
+	cover.addEventListener('click', toggleMenu);
 };
 
 export default main;

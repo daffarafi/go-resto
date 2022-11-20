@@ -1,35 +1,51 @@
 @import 'base';
 
-@mixin button($mainColor: $primaryColor, $fontColor: black, $reverse: false) {
+@mixin button(
+	$bgColor: $primaryColor,
+	$fontColor: $secondaryColor,
+	$borderColor: $primaryColor,
+	$menuBtn: false
+) {
 	display: block;
-	// transition: all 0.3s;
-	height: 44px;
-	padding: 0 15px;
+	width: fit-content;
+	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	border: 2px solid $mainColor;
-	@if $reverse {
-		background-color: transparent;
-		color: $mainColor;
-		// &:hover {
-		// 	background-color: $mainColor;
-		// 	color: $fontColor;
-		// }
+	border: 2px solid $borderColor;
+	background-color: $bgColor;
+	color: $fontColor;
+	transition: all 0.3s;
+	white-space: nowrap;
+	transition: all 0.3s;
+	&:hover {
+		background-color: $fontColor;
+		color: $bgColor;
+		border-color: $bgColor;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 1.2rem;
+	}
+	@if ($menuBtn) {
+		width: 100%;
 	} @else {
-		background-color: $mainColor;
-		color: $fontColor;
-		// &:hover {
-		// 	background-color: $fontColor;
-		// 	color: $mainColor;
-		// }
+		width: fit-content;
 	}
 }
 
 .primary-button {
-	@include button($primaryColor, white);
+	@include button($primaryColor, white, $primaryColor);
 }
 
-.second-button {
-	@include button($primaryColor, $primaryColor, true);
+.secondary-button {
+	@include button($secondaryColor, $primaryColor, $primaryColor, true);
+}
+
+.nav-btn-on-pc {
+	background-color: transparent;
+	border-color: transparent;
+	&:hover {
+		border-color: transparent;
+	}
 }

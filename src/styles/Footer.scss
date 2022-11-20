@@ -4,7 +4,7 @@ footer-content {
 	display: block;
 	border-top: 5px solid $primaryColor;
 	width: 100%;
-	background-color: #161616;
+	background-color: $secondaryColor;
 	padding: 1.5rem 0;
 	.links {
 		display: flex;
@@ -12,17 +12,6 @@ footer-content {
 		gap: 0.5rem;
 		flex-direction: column;
 		align-items: center;
-		.social-media {
-			display: flex;
-			gap: 0.6rem;
-			a {
-				display: block;
-			}
-			svg {
-				width: 30px;
-				height: 30px;
-			}
-		}
 		.logo {
 			transform: scale(1.5);
 		}

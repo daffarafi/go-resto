@@ -3,14 +3,16 @@ class ButtonElement extends HTMLElement {
 		super();
 	}
 
-	set text(text) {
-		this._text = text;
+	set content(content) {
+		this._content = content;
 		this.render();
 	}
 
 	render() {
 		this.innerHTML = `
-            <button class="primary-button">${this._text}</button>
+            <a href=${this._content.link} class="${
+			this._content.isPrimary ? 'primary-button' : 'secondary-button'
+		}">${this._content.text}</a>
         `;
 	}
 }

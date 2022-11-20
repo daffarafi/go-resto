@@ -23,7 +23,11 @@ class HeaderContent extends HTMLElement {
         `;
 		const button = document.createElement('button-element');
 		const headContent = document.querySelector('.head-content');
-		button.text = 'Restaurant';
+		button.content = {
+			link: '#',
+			text: 'Restaurant',
+			isPrimary: true,
+		};
 		headContent.appendChild(button);
 	}
 }
