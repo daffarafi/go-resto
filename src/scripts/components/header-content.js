@@ -14,6 +14,7 @@ class HeaderContent extends HTMLElement {
 		this.style.backgroundImage = `url("${img}")`;
 		this.style.display = 'flex';
 		this.style.flexDirection = 'column';
+		this.classList.add('margin-section');
 		this.innerHTML = `
         <div class="opacity"></div>
         <div class="head-content">

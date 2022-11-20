@@ -1,6 +1,7 @@
 @import 'base';
 
 explore-restaurant {
+	display: block;
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -64,6 +65,13 @@ explore-restaurant {
 					p {
 						span {
 							color: $primaryColor;
+
+							// display: inline-block;
+							// color: white;
+							// font-size: 1rem;
+							// margin-top: 10px;
+							// padding: 10px 10px;
+							// background-color: $primaryColor;
 						}
 					}
 				}

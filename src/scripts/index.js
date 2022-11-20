@@ -1,4 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/component.scss';
 import '../styles/Navbar.scss';
 import '../styles/Header.scss';
 import '../styles/RestaurantList.scss';

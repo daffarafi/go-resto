@@ -10,6 +10,7 @@ class ExploreRestaurant extends HTMLElement {
 	}
 
 	render() {
+		this.classList.add('margin-section');
 		this.innerHTML = `
         <div class="container">
             <h2 class="margin-bottom">Explore Restaurant</h2>

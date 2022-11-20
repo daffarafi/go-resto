@@ -8,6 +8,7 @@ class NavBar extends HTMLElement {
 	}
 
 	render() {
+		this.classList.add('container');
 		this.innerHTML = `
             <div class="navigates">
                 <!-- <ul>
@@ -26,14 +27,16 @@ class NavBar extends HTMLElement {
                 <div><span>Go</span>Resto</div>
             </div>
             <div class="lang">
-                <label for="switchLang">
-                    <span>EN</span>
-                    <input type="checkbox" name="switchLang" id="switchLand">
-                    <span>ID</span>
+                <label for="en" class="selected-lang">
+                    EN
+                    <input type="radio" name="switchLang" id="en" hidden>
+                </label>
+                <label for="id">
+                    ID
+                    <input type="radio" name="switchLang" id="id" hidden>
                 </label>
             </div>
         `;
-		this.classList.add('container');
 	}
 }
 

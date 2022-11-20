@@ -18,9 +18,9 @@ class RestaurantItem extends HTMLElement {
             <h3>${this._restaurant.name}</h3>
             <p>
                 ${
-					this._restaurant.description.length <= 150
+					this._restaurant.description.length <= 130
 						? this._restaurant.description
-						: this._restaurant.description.slice(1, 150) +
+						: this._restaurant.description.slice(1, 130) +
 						  '... <span>Read more</span>'
 				}
             </p>
