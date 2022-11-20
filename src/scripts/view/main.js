@@ -57,7 +57,6 @@ const main = () => {
 		}
 	};
 
-	console.log(popularRestaurant);
 	fetchRestaurants();
 	fetchRestaurants('malang', popularRestaurant);
 

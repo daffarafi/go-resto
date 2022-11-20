@@ -56,6 +56,21 @@ h2 {
 	}
 }
 
+.section-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 1rem;
+	& > h2,
+	& > p {
+		text-align: center;
+	}
+
+	& > p {
+		max-width: 768px;
+	}
+}
+
 .switch-lang {
 	transform: translateX(-50%);
 }
