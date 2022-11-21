@@ -5,8 +5,13 @@ class ExploreRestaurant extends HTMLElement {
 		super();
 	}
 
-	connectedCallback() {
+	set isEnglish(isEnglish) {
+		this._isEnglish = isEnglish;
 		this.render();
+	}
+
+	connectedCallback() {
+		this.isEnglish = false;
 	}
 
 	render() {
@@ -15,7 +20,11 @@ class ExploreRestaurant extends HTMLElement {
         <div class="container">
             <div class="section-header">
                 <h2 class="margin-bottom">Explore Restaurant</h2>
-                <p class="margin-bottom">Jika anda sedang mencari restoran yang nyaman dan sesuai untuk anda, maka GoResto adalah website yang cocok untuk anda! Anda bisa menggunakan fitur cari dibawah atau mencari restoran satu persatu.</p>
+                ${
+					this._isEnglish
+						? `<p class="margin-bottom">If you are looking for cozy and suitable restaurant for you, then GoResto is the right website for you! You can search restaurant name or city below or just search one by one.</p>`
+						: `<p class="margin-bottom">Jika anda sedang mencari restoran yang nyaman dan sesuai untuk anda, maka GoResto adalah website yang cocok untuk anda! Anda bisa menggunakan fitur cari dibawah atau mencari restoran satu persatu.</p>`
+				}
                 <div class="margin-bottom searchbar">
                     <input
                     placeholder="Restaurant or city"

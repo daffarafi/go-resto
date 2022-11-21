@@ -3,6 +3,9 @@ import DataFetcher from '../data/data-fetcher.js';
 const main = () => {
 	const exploreRestaurant = document.querySelector('.explore-restaurant');
 	const popularRestaurant = document.querySelector('.popular-restaurant');
+	const exploreRestaurantPage = document.querySelector('explore-restaurant');
+	const ourServicesPage = document.querySelector('our-services');
+	const trendingTodayPage = document.querySelector('trending-today');
 	const navBar = document.querySelector('nav');
 	const logoNav = navBar.querySelector('.logo');
 	const searchBtn = document.querySelector('#searchButtonElement');
@@ -61,8 +64,11 @@ const main = () => {
 	fetchRestaurants('malang', popularRestaurant);
 
 	searchBtn.addEventListener('click', () => {
+		const newExploreRestaurant = document.querySelector(
+			'.explore-restaurant'
+		);
 		const searchValue = document.querySelector('#searchElement').value;
-		fetchRestaurants(searchValue, exploreRestaurant);
+		fetchRestaurants(searchValue, newExploreRestaurant);
 	});
 
 	window.addEventListener('scroll', () => {
@@ -89,9 +95,32 @@ const main = () => {
 	switchLangBtn.addEventListener('click', () => {
 		if (switchLangBtn.checked) {
 			switchLangContainer.classList.add('switch-lang');
+			exploreRestaurantPage.isEnglish = true;
+			ourServicesPage.isEnglish = true;
+			trendingTodayPage.isEnglish = true;
 		} else {
 			switchLangContainer.classList.remove('switch-lang');
+			exploreRestaurantPage.isEnglish = false;
+			ourServicesPage.isEnglish = false;
+			trendingTodayPage.isEnglish = false;
 		}
+		const newExploreRestaurant = document.querySelector(
+			'.explore-restaurant'
+		);
+		const newPopularRestaurant = document.querySelector(
+			'.popular-restaurant'
+		);
+		const newSearchBtn = document.querySelector('#searchButtonElement');
+
+		fetchRestaurants('', newExploreRestaurant);
+		fetchRestaurants('malang', newPopularRestaurant);
+		newSearchBtn.addEventListener('click', () => {
+			const newExploreRestaurant = document.querySelector(
+				'.explore-restaurant'
+			);
+			const searchValue = document.querySelector('#searchElement').value;
+			fetchRestaurants(searchValue, newExploreRestaurant);
+		});
 	});
 
 	toggleNavlinks.addEventListener('click', toggleMenu);

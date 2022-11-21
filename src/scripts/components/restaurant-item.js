@@ -13,9 +13,9 @@ class RestaurantItem extends HTMLElement {
 	render() {
 		this.innerHTML = `
         <div class="restaurant-cover">
-            <img src="${this._restaurant.pictureId}" alt="${
-			this._restaurant.name
-		}">
+            <img src="${this._restaurant.pictureId}" 
+                alt="${this._restaurant.name}"
+            >
         </div>
         <div class="restaurant-detail">
             <div class="restaurant-detail-text">

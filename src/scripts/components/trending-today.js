@@ -5,8 +5,13 @@ class TrendingToday extends HTMLElement {
 		super();
 	}
 
-	connectedCallback() {
+	set isEnglish(isEnglish) {
+		this._isEnglish = isEnglish;
 		this.render();
+	}
+
+	connectedCallback() {
+		this.isEnglish = false;
 	}
 
 	render() {
@@ -15,7 +20,12 @@ class TrendingToday extends HTMLElement {
         <div class="container">
             <div class="section-header">
                 <h2 class="margin-bottom">Trending Today</h2>
-                <p class="margin-bottom">Berikut adalah restoran yang sedang ramai dikunjungi!</p>
+                ${
+					this._isEnglish
+						? `<p class="margin-bottom">Check out today's trending restaurant!</p>`
+						: `<p class="margin-bottom">Berikut adalah restoran yang sedang ramai dikunjungi!</p>`
+				}
+                
             </div>
             <restaurant-list class="popular-restaurant"/>
         </div>

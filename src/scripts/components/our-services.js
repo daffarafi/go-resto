@@ -5,8 +5,13 @@ class OurServices extends HTMLElement {
 		super();
 	}
 
-	connectedCallback() {
+	set isEnglish(isEnglish) {
+		this._isEnglish = isEnglish;
 		this.render();
+	}
+
+	connectedCallback() {
+		this.isEnglish = false;
 	}
 
 	render() {
@@ -37,8 +42,17 @@ class OurServices extends HTMLElement {
                             </defs>
                         </svg>
                     </div>
-                    <h5>Akurat</h5>
-                    <p>Kami selalu memastikan data restoran akurat</p>
+                    ${
+						this._isEnglish
+							? `                    
+                            <h5>Accurate</h5>
+                            <p>We always ensure accurate restaurant data</p>
+                            `
+							: `                    
+                            <h5>Akurat</h5>
+                            <p>Kami selalu memastikan data restoran yang akurat</p>
+                            `
+					}
                 </div>
                 <div class="feature-item">
                     <div class="feature-logo">
@@ -53,8 +67,18 @@ class OurServices extends HTMLElement {
                             </defs>
                         </svg>
                     </div>
-                    <h5>Update</h5>
-                    <p>Data yang kami tampilkan adalah data terbaru</p>
+                    ${
+						this._isEnglish
+							? `                    
+                            <h5>Update</h5>
+                            <p>The data we display is the latest data</p>
+                            `
+							: `                    
+                            <h5>Update</h5>
+                            <p>Data yang kami tampilkan adalah data terbaru</p>
+                            `
+					}
+
                 </div>
                 <div class="feature-item">
                     <div class="feature-logo">
@@ -69,8 +93,17 @@ class OurServices extends HTMLElement {
                             </defs>
                         </svg>
                     </div>
-                    <h5>Cepat</h5>
-                    <p>Website kami lebih cepat 100% dari website lain</p>
+                    ${
+						this._isEnglish
+							? `                    
+                            <h5>Fast</h5>
+                            <p>Our website is 100% faster than other websites</p>
+                            `
+							: `                    
+                            <h5>Cepat</h5>
+                            <p>Website kami lebih cepat 100% dari website lain</p>
+                            `
+					}
                 </div>
             </div>
         </div>

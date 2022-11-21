@@ -24,7 +24,7 @@ class HeaderContent extends HTMLElement {
 		const button = document.createElement('button-element');
 		const headContent = document.querySelector('.head-content');
 		button.content = {
-			link: '#',
+			link: '#mainContent',
 			text: 'Restaurant',
 			isPrimary: true,
 		};
