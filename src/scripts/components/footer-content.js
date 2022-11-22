@@ -16,7 +16,7 @@ class FooterContent extends HTMLElement {
                 <div class="logo">
                     <div><span>Go</span>Resto</div>
                 </div>
-                <div class="copyright"><p>Copyright © 2022 <a href="">Daffa Rafi</a> - GoResto</p></div>
+                <div class="copyright"><p>Copyright © 2022 created with ♥ by Daffa Rafi - GoResto</p></div>
             </div>
         `;
 	}
