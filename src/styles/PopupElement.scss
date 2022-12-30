@@ -1,0 +1,47 @@
+@import 'base';
+
+popup-element {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 0 9px -2px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    h1 {
+        color: white;
+        font-size: 1.2rem;
+    }
+    .popup-title {
+        background-color: grey;
+        border-radius: 20px 20px 0 0;
+        padding: 0.5rem 1rem;
+        &.popup-error {
+            background-color: red;
+        }
+        &.popup-success {
+            background-color: green;
+        }
+    }
+    .popup-content {
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .popup-button {
+            width: 150px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: $primaryColor;
+            align-self: flex-end;
+        }
+    }
+}
