@@ -6,6 +6,7 @@ class ReviewsContent extends HTMLElement {
     this._restaurantId = restaurantId;
     this.render();
     this._afterRender();
+    this._addTextAreaAdjust();
   }
 
   render() {
@@ -18,13 +19,13 @@ class ReviewsContent extends HTMLElement {
           <div class="profile-img"></div>
           <div class="profile-name-date">
             <div class="profile-name">
-              <h4><input class='input-name' type="text" id='reviewName' placeholder="Tulis namamu disini"></h4>
+              <h4><input class='input-name' type="text" id='reviewName' placeholder="Your name..."></h4>
             </div>
           </div>
         </div>
       </div>
       <div class="review-message">
-        <span class="textarea" role='textarea' id='reviewMessage' contenteditable></span>
+        <textarea class="textarea" id='reviewMessage' placeholder="Write your review here!"></textarea>
         <button class='submit-review' id='submitReview'>
           <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 18.5V11.5625L9.26316 9.25L0 6.9375V0L22 9.25L0 18.5Z" fill="#E88F2A"/>
@@ -68,6 +69,14 @@ class ReviewsContent extends HTMLElement {
       </div>
     </div>
     `;
+  }
+
+  _addTextAreaAdjust() {
+    const textArea = document.getElementById('reviewMessage');
+    textArea.addEventListener('keyup', () => {
+      textArea.style.height = '1px';
+      textArea.style.height = `${25 + textArea.scrollHeight}px`;
+    });
   }
 }
 
