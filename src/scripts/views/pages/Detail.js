@@ -8,11 +8,15 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantSource.DetailRestaurant(url.id);
-    const detailPageContainer = await document.querySelector(
-      'restaurant-detail'
-    );
-    detailPageContainer.restaurantDetail = restaurant;
+    try {
+      const restaurant = await RestaurantSource.DetailRestaurant(url.id);
+      const detailPageContainer = await document.querySelector(
+        'restaurant-detail'
+      );
+      detailPageContainer.restaurantDetail = restaurant;
+    } catch (err) {
+      alert(err);
+    }
   },
 };
 
