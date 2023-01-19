@@ -1,0 +1,29 @@
+@import '@styles/base';
+@import '@styles/component';
+
+.slider {
+    display: flex;
+    justify-content: center;
+    gap:0.5rem;
+    button {
+        border: none;
+        background-color: white;
+        padding: 1.1rem 1rem;
+        .block {
+            height: 4px;
+            width: 0;
+            background-color: $primaryColor;
+            transition: all 0.3s;
+        }
+        &:hover {
+            .block {
+                width: 100%;
+            }
+        }
+        &.selected {
+            .block {
+                width: 100%;
+            }
+        }
+    }
+}

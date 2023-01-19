@@ -1,0 +1,36 @@
+@import '@styles/base';
+@import '@styles/component';
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        & > h2,
+        & > p {
+            text-align: center;
+        }
+        & > p {
+            max-width: 768px;
+        }
+    }
+    .restaurant-list {
+        width: 100%;
+        max-width: 1440px;
+        display: grid;
+        justify-content: center;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+        .not-found {
+            font-size: 1.5rem;
+            line-height: normal;
+            font-weight: 200;
+            font-style: italic;
+            color: grey;
+        }
+    }
+}

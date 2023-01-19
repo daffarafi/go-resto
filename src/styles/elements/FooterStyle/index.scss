@@ -1,0 +1,42 @@
+@import '@styles/base';
+@import '@styles/component';
+
+footer {
+	display: block;
+	border-top: 5px solid $primaryColor;
+	width: 100%;
+	background-color: $secondaryColor;
+	padding: 1.5rem 0;
+	.links {
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
+		align-items: center;
+        .social-media {
+            display: flex;
+            gap: 0.6rem;
+            a {
+                display: block;
+                &:hover {
+                    svg {
+                        width: 44px;
+                        height: 44px;
+                        path {
+                            fill: #898989;
+                            transition: all 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+		.logo {
+			transform: scale(1.5);
+		}
+		.copyright {
+			color: white;
+			font-weight: 300;
+			letter-spacing: 0.05rem;
+			text-align: center;
+		}
+	}
+}
