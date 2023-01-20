@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: {
@@ -16,6 +17,8 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       minChunks: 1,
+      minSize: 20000,
+      maxSize: 70000,
       maxAsyncRequests: 5,
       maxInitialRequests: 5,
       automaticNameDelimiter: '~',
@@ -93,6 +96,7 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
     }),
+    new BundleAnalyzerPlugin(),
   ],
   resolve: {
     alias: {
