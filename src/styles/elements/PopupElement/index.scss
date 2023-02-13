@@ -1,0 +1,38 @@
+@import '@styles/base';
+@import '@styles/component';
+
+.popup-element {
+    position: fixed;
+    z-index: 1;
+    right: 20px;
+    bottom: 20px;
+    .popup-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+        .popup-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 220px;
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            background-color: $secondaryColor;
+            border: 1px solid lighten($secondaryColor, 10%);
+            box-shadow: 0 0 12px -2px #00000080;
+            p {
+                font-size: 0.8rem;
+                color: $primaryColor;
+                word-wrap: break-word;
+            }
+            button-element {
+                align-self: flex-end;
+                span {
+                    display: block;
+                    font-size: 16px;
+                    margin: 0px -2px;
+                }
+            }
+        }
+    }
+}

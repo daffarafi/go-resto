@@ -1,0 +1,90 @@
+@import '@styles/base';
+@import '@styles/component';
+
+:host {
+    display: block;
+}
+
+:host.full-width {
+    width: 100%;
+}
+
+.button {
+    white-space: nowrap;
+    color: white;
+    background-color: $primaryColor;
+    padding: 0.5rem 1rem;
+	font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid $primaryColor;
+    border-radius: 5px;
+    transition: all 0.3s;
+    @media screen and (min-width: 768px) {
+		font-size: 1.2rem;
+	}
+}
+
+.button.full-width {
+    display: block;
+    width: 100%;
+}
+
+.button.color-primary {
+    color: $primaryColor 
+}
+
+.button.color-secondary {
+    color: $secondaryColor 
+}
+
+.button.color-transparent {
+    color: white 
+}
+
+.button.color-hover-primary:hover {
+    color: $primaryColor 
+}
+
+.button.color-hover-secondary:hover {
+    color: $secondaryColor 
+}
+
+.button.color-hover-transparent:hover {
+    color: white 
+}
+
+.button.bg-color-primary {
+    background-color: $primaryColor 
+}
+
+.button.bg-color-secondary {
+    background-color: $secondaryColor 
+}
+
+.button.bg-color-transparent {
+    background-color: transparent 
+}
+
+.button.bg-color-hover-primary:hover {
+    background-color: $primaryColor 
+}
+
+.button.bg-color-hover-secondary:hover {
+    background-color: $secondaryColor 
+}
+
+.button.bg-color-hover-transparent:hover {
+    background-color: transparent 
+}
+
+.button.border-primary {
+    border: 2px solid $primaryColor 
+}
+
+.button.border-secondary {
+    border: 2px solid $secondaryColor 
+}
+
+.button.border-transparent {
+    border: 2px solid transparent 
+}
