@@ -1,0 +1,86 @@
+@import 'base';
+
+@mixin button(
+	$bgColor: $primaryColor,
+	$fontColor: $secondaryColor,
+	$borderColor: $primaryColor,
+	$menuBtn: false
+) {
+	display: block;
+	width: fit-content;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px solid $borderColor;
+	background-color: $bgColor;
+	color: $fontColor;
+	transition: all 0.3s;
+	white-space: nowrap;
+	transition: all 0.3s;
+	&:hover {
+		background-color: $fontColor;
+		color: $bgColor;
+		border-color: $bgColor;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 1.2rem;
+	}
+	@if ($menuBtn) {
+		width: 100%;
+	} @else {
+		width: fit-content;
+	}
+}
+
+.primary-button {
+	@include button($primaryColor, white, $primaryColor);
+}
+
+.secondary-button {
+	@include button($secondaryColor, $primaryColor, $primaryColor, true);
+}
+
+slide-button {
+    button {
+        border: none;
+        background-color: white;
+        padding: 1.1rem 1rem;
+        .block {
+            height: 4px;
+            width: 0;
+            background-color: $primaryColor;
+            transition: all 0.3s;
+        }
+        &:hover {
+            .block {
+                width: 100%;
+            }
+        }
+    }
+    &.selected {
+        .block {
+            width: 100%;
+        }
+    }
+}
+
+favorite-button {
+    button {
+        display: block;
+        border:none;
+        background-color: $primaryColor;
+        color: white;
+        padding: 0.75rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+.nav-btn-on-pc {
+	background-color: transparent;
+	border-color: transparent;
+	&:hover {
+		border-color: transparent;
+	}
+}
