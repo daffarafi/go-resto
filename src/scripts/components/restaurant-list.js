@@ -1,32 +1,29 @@
-import './restaurant-item.js';
+import './restaurant-item';
 
 class RestaurantList extends HTMLElement {
-	constructor() {
-		super();
-	}
+  set restaurants(restaurants) {
+    this._restaurants = restaurants;
+    this.render();
+    this._afterRender();
+  }
 
-	set restaurants(restaurants) {
-		this._restaurants = restaurants;
-		this.render();
-	}
-
-	renderNotFound(string) {
-		this.innerHTML = `
+  renderNotFound(string) {
+    this.innerHTML = `
             <p class="not-found">${string}</p>
         `;
-	}
+  }
 
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = '';
+  }
 
-        `;
-
-		this._restaurants.map((restaurant) => {
-			const item = document.createElement('restaurant-item');
-			item.restaurant = restaurant;
-			this.appendChild(item);
-		});
-	}
+  _afterRender() {
+    this._restaurants.forEach((restaurant) => {
+      const item = document.createElement('restaurant-item');
+      item.restaurant = restaurant;
+      this.appendChild(item);
+    });
+  }
 }
 
 customElements.define('restaurant-list', RestaurantList);

@@ -118,50 +118,16 @@ nav {
 			transform: translateY(-100px);
 			transition: all 0.3s;
 			font-size: 1.85rem;
-			// font-size: 2rem;
 		}
-		.lang-container {
+		.profile {
 			position: relative;
 			justify-self: end;
 			width: 44px;
 			height: 44px;
+            background-color: $tertiaryColor;
 			overflow: hidden;
-			border: 2px solid transparent;
-			border-radius: 2px;
-			&:focus-within {
-				outline: 5px auto Highlight;
-				outline: 5px auto -webkit-focus-ring-color;
-			}
-			#lang {
-				display: flex;
-				width: fit-content;
-				transition: all 0.3s;
-				label {
-					display: flex;
-					width: fit-content;
-					text-align: center;
-					color: $primaryColor;
-					letter-spacing: 0.05rem;
-					font-weight: 200;
-					font-size: 1.2rem;
-					font-size: 1.85rem;
-					span {
-						display: block;
-						width: 44px;
-						height: 44px;
-					}
-				}
-				input {
-					position: absolute;
-					left: 0;
-					top: 0;
-					width: 44px;
-					height: 44px;
-					background-color: transparent;
-					color: transparent;
-					opacity: 0;
-				}
-			}
+			border-radius: 50%;
+            border: solid 2px $primaryColor;
 		}
 	}
 }

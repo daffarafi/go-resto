@@ -42,6 +42,41 @@
 	@include button($secondaryColor, $primaryColor, $primaryColor, true);
 }
 
+slide-button {
+    button {
+        border: none;
+        background-color: white;
+        padding: 1.1rem 1rem;
+        .block {
+            height: 4px;
+            width: 0;
+            background-color: $primaryColor;
+            transition: all 0.3s;
+        }
+        &:hover {
+            .block {
+                width: 100%;
+            }
+        }
+    }
+    &.selected {
+        .block {
+            width: 100%;
+        }
+    }
+}
+
+favorite-button {
+    button {
+        display: block;
+        border:none;
+        background-color: $primaryColor;
+        color: white;
+        padding: 0.75rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
 .nav-btn-on-pc {
 	background-color: transparent;
 	border-color: transparent;

@@ -1,30 +1,17 @@
-import './restaurant-list.js';
+import './restaurant-list';
 
 class ExploreRestaurant extends HTMLElement {
-	constructor() {
-		super();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	set isEnglish(isEnglish) {
-		this._isEnglish = isEnglish;
-		this.render();
-	}
-
-	connectedCallback() {
-		this.isEnglish = false;
-	}
-
-	render() {
-		this.classList.add('margin-section');
-		this.innerHTML = `
+  render() {
+    this.classList.add('margin-section');
+    this.innerHTML = `
         <div class="container">
             <div class="section-header">
                 <h2 class="margin-bottom">Explore Restaurant</h2>
-                ${
-					this._isEnglish
-						? `<p class="margin-bottom">If you are looking for cozy and suitable restaurant for you, then GoResto is the right website for you! You can search restaurant name or city below or just search one by one.</p>`
-						: `<p class="margin-bottom">Jika anda sedang mencari restoran yang nyaman dan sesuai untuk anda, maka GoResto adalah website yang cocok untuk anda! Anda bisa menggunakan fitur cari dibawah atau mencari restoran satu persatu.</p>`
-				}
+                <p class="margin-bottom">Jika anda sedang mencari restoran yang nyaman dan sesuai untuk anda, maka GoResto adalah website yang cocok untuk anda! Anda bisa menggunakan fitur cari dibawah atau mencari restoran satu persatu.</p>
                 <div class="margin-bottom searchbar">
                     <input
                     placeholder="Restaurant or city"
@@ -41,7 +28,7 @@ class ExploreRestaurant extends HTMLElement {
             <restaurant-list class="explore-restaurant"/>
         </div>
         `;
-	}
+  }
 }
 
 customElements.define('explore-restaurant', ExploreRestaurant);

@@ -1,16 +1,12 @@
-import './social-media.js';
+import './social-media';
 
 class FooterContent extends HTMLElement {
-	constructor() {
-		super();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	connectedCallback() {
-		this.render();
-	}
-
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <div class="container links">
                 <social-media></social-media>
                 <div class="logo">
@@ -19,7 +15,7 @@ class FooterContent extends HTMLElement {
                 <div class="copyright"><p>Copyright © 2022 created with ♥ by Daffa Rafi - GoResto</p></div>
             </div>
         `;
-	}
+  }
 }
 
 customElements.define('footer-content', FooterContent);

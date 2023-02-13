@@ -1,14 +1,10 @@
 class SocialMedia extends HTMLElement {
-	constructor() {
-		super();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	connectedCallback() {
-		this.render();
-	}
-
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = `
             <div class="twitter">
                 <a href="https://www.twitter.com/DaffaTGI">
                 <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +42,7 @@ class SocialMedia extends HTMLElement {
                 </a>
             </div>
         `;
-	}
+  }
 }
 
 customElements.define('social-media', SocialMedia);

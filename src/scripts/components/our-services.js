@@ -1,28 +1,17 @@
-import img from '../../public/images/features-bg.jpg';
-
 class OurServices extends HTMLElement {
-	constructor() {
-		super();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	set isEnglish(isEnglish) {
-		this._isEnglish = isEnglish;
-		this.render();
-	}
-
-	connectedCallback() {
-		this.isEnglish = false;
-	}
-
-	render() {
-		this.style.backgroundImage = `url(${img})`;
-		this.style.backgroundPosition = 'center';
-		this.style.backgroundRepeat = 'no-repeat';
-		this.style.backgroundSize = 'cover';
-		this.style.display = 'block';
-		this.style.width = '100%';
-		this.classList.add('margin-section');
-		this.innerHTML = `
+  render() {
+    this.style.backgroundImage = 'url("./images/features-bg.webp")';
+    this.style.backgroundPosition = 'center';
+    this.style.backgroundRepeat = 'no-repeat';
+    this.style.backgroundSize = 'cover';
+    this.style.display = 'block';
+    this.style.width = '100%';
+    this.classList.add('margin-section');
+    this.innerHTML = `
         <div class="opacity"></div>
         <div class="container">
             <div class="section-header">
@@ -42,17 +31,8 @@ class OurServices extends HTMLElement {
                             </defs>
                         </svg>
                     </div>
-                    ${
-						this._isEnglish
-							? `                    
-                            <h5>Accurate</h5>
-                            <p>We always ensure accurate restaurant data</p>
-                            `
-							: `                    
-                            <h5>Akurat</h5>
-                            <p>Kami selalu memastikan data restoran yang akurat</p>
-                            `
-					}
+                      <h5>Akurat</h5>
+                      <p>Kami selalu memastikan data restoran yang akurat</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-logo">
@@ -66,19 +46,9 @@ class OurServices extends HTMLElement {
                                 </clipPath>
                             </defs>
                         </svg>
-                    </div>
-                    ${
-						this._isEnglish
-							? `                    
-                            <h5>Update</h5>
-                            <p>The data we display is the latest data</p>
-                            `
-							: `                    
-                            <h5>Update</h5>
-                            <p>Data yang kami tampilkan adalah data terbaru</p>
-                            `
-					}
-
+                    </div>                   
+                      <h5>Update</h5>
+                      <p>Data yang kami tampilkan adalah data terbaru</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-logo">
@@ -93,22 +63,13 @@ class OurServices extends HTMLElement {
                             </defs>
                         </svg>
                     </div>
-                    ${
-						this._isEnglish
-							? `                    
-                            <h5>Fast</h5>
-                            <p>Our website is 100% faster than other websites</p>
-                            `
-							: `                    
-                            <h5>Cepat</h5>
-                            <p>Website kami lebih cepat 100% dari website lain</p>
-                            `
-					}
+                      <h5>Cepat</h5>
+                      <p>Website kami lebih cepat 100% dari website lain</p>
                 </div>
             </div>
         </div>
         `;
-	}
+  }
 }
 
 customElements.define('our-services', OurServices);

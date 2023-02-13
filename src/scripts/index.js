@@ -1,22 +1,21 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/component.scss';
-import '../styles/Navbar.scss';
-import '../styles/Header.scss';
-import '../styles/ExploreRestaurant.scss';
-import '../styles/OurServices.scss';
-import '../styles/TrendingToday.scss';
-import '../styles/Footer.scss';
-import '../styles/Button.scss';
-import '../styles/SocialMedia.scss';
-import '../styles/SearchBar.scss';
-import '../styles/RestaurantList.scss';
-import '../styles/RestaurantItem.scss';
-import './components/nav-bar.js';
-import './components/header-content.js';
-import './components/explore-restaurant.js';
-import './components/our-services.js';
-import './components/trending-today.js';
-import './components/footer-content.js';
-import main from './view/main.js';
+import '../styles/index';
+import './components/index';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
-document.addEventListener('DOMContentLoaded', main);
+const app = new App({
+  button: document.querySelector('.hamburger'),
+  drawer: document.querySelector('.navlinks'),
+  cover: document.querySelector('.cover'),
+  content: document.querySelector('#mainContent'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', async () => {
+  app.renderPage();
+  swRegister();
+});

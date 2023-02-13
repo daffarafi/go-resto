@@ -1,0 +1,16 @@
+import './component.scss';
+import './Navbar.scss';
+import './Header.scss';
+import './ExploreRestaurant.scss';
+import './OurServices.scss';
+import './TrendingToday.scss';
+import './FavoritePage.scss';
+import './Footer.scss';
+import './Button.scss';
+import './SocialMedia.scss';
+import './SearchBar.scss';
+import './RestaurantList.scss';
+import './RestaurantItem.scss';
+import './RestaurantDetail.scss';
+import './PopupElement.scss';
+import './NotFound.scss';

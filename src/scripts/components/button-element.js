@@ -1,20 +1,14 @@
 class ButtonElement extends HTMLElement {
-	constructor() {
-		super();
-	}
+  set content(content) {
+    this._content = content;
+    this.render();
+  }
 
-	set content(content) {
-		this._content = content;
-		this.render();
-	}
-
-	render() {
-		this.innerHTML = `
-            <a href=${this._content.link} class="${
-			this._content.isPrimary ? 'primary-button' : 'secondary-button'
-		}">${this._content.text}</a>
-        `;
-	}
+  render() {
+    this.innerHTML = `<a href=${this._content.link} class="${
+      this._content.isPrimary ? 'primary-button' : 'secondary-button'
+    }">${this._content.text}</a>`;
+  }
 }
 
 customElements.define('button-element', ButtonElement);

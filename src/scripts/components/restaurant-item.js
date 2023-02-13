@@ -1,19 +1,17 @@
-import '../components/button-element.js';
+import './button-element';
 
 class RestaurantItem extends HTMLElement {
-	constructor() {
-		super();
-	}
+  set restaurant(restaurant) {
+    this._restaurant = restaurant;
+    this.render();
+  }
 
-	set restaurant(restaurant) {
-		this._restaurant = restaurant;
-		this.render();
-	}
-
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = `
         <div class="restaurant-cover">
-            <img src="${this._restaurant.pictureId}" 
+            <img src="https://restaurant-api.dicoding.dev/images/small/${
+              this._restaurant.pictureId
+            }" 
                 alt="${this._restaurant.name}"
             >
         </div>
@@ -22,13 +20,13 @@ class RestaurantItem extends HTMLElement {
                 <h4><span>★</span>${this._restaurant.rating}</h4>
                 <h3>${this._restaurant.name}</h3>
                     ${
-						this._restaurant.description.length <= 130
-							? `<p>${this._restaurant.description}</p>`
-							: `<p>${this._restaurant.description.slice(
-									1,
-									130
-							  )}...</p>`
-					}
+                      this._restaurant.description.length <= 130
+                        ? `<p>${this._restaurant.description}</p>`
+                        : `<p>${this._restaurant.description.slice(
+                            1,
+                            130
+                          )}...</p>`
+                    }
             </div>
             <button-element></button-element>
         </div>
@@ -36,13 +34,13 @@ class RestaurantItem extends HTMLElement {
             <p>${this._restaurant.city}</p>
         </div>
         `;
-		const readMoreBtn = this.querySelector('button-element');
-		readMoreBtn.content = {
-			text: 'Read more',
-			link: '#',
-			isPrimary: true,
-		};
-	}
+    const readMoreBtn = this.querySelector('button-element');
+    readMoreBtn.content = {
+      text: 'Read more',
+      link: `/#/detail/${this._restaurant.id}`,
+      isPrimary: true,
+    };
+  }
 }
 
 customElements.define('restaurant-item', RestaurantItem);
