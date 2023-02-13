@@ -1,0 +1,57 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+p {
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+}
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-family: 'Rampart One';
+	font-size: 2.5rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 3rem;
+}
+
+main {
+    min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+	p {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	h1 {
+		font-size: 6rem;
+	}
+	h2 {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	h2 {
+		font-size: 3.5rem;
+	}
+}
