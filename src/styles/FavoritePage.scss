@@ -1,0 +1,14 @@
+@import 'base';
+
+favorite-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    min-height: 100vh;
+    h1 {
+        color: $primaryColor;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}

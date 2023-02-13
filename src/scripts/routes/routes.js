@@ -1,9 +1,11 @@
-import { HomePage, DetailPage, FavoritePage } from '@pages';
+import Home from '../views/pages/Home';
+import Detail from '../views/pages/Detail';
+import Favorite from '../views/pages/Favorite';
 
-export const routes = {
-  '/': HomePage, // default page
-  '/detail/:id': DetailPage,
-  '/favorite': FavoritePage,
+const routes = {
+  '/': Home, // default page
+  '/detail/:id': Detail,
+  '/favorite': Favorite,
 };
 
 export default routes;

@@ -1,0 +1,18 @@
+@import 'base';
+
+.searchbar {
+	display: flex;
+	// flex-direction: column;
+	width: 300px;
+	input {
+		flex-basis: 100%;
+		border: 1px solid black;
+		padding: 0 20px;
+	}
+	button {
+		width: 44px;
+		height: 44px;
+		border: none;
+		background-color: $primaryColor;
+	}
+}
